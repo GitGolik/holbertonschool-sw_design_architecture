@@ -5,17 +5,21 @@ class Bus:
     def mode(self):
         return "road"
 
+
 class Train:
     def mode(self):
         return "rails"
+
 
 class Bike:
     def mode(self):
         return "lane"
 
+
 class Scooter:
     def mode(self):
         return "scooter_lane"
+
 
 class VehicleFactory:
     _registry = {
@@ -37,6 +41,7 @@ class VehicleFactory:
 
         return vehicle_class()
 
+
 def main():
     factory = VehicleFactory()
 
@@ -47,6 +52,7 @@ def main():
     factory.register_kind("scooter", Scooter)
 
     print(factory.create("scooter").mode())
+
 
 if __name__ == "__main__":
     main()
